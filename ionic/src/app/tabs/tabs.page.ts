@@ -14,7 +14,6 @@ export class TabsPage implements OnInit{
   constructor(
     private http:HttpService
   ) { 
-    console.log("constructor Tabs")
     
   }
    
@@ -22,7 +21,7 @@ export class TabsPage implements OnInit{
   ngOnInit() {
     interval(2000).subscribe(x => {
       console.log('hey');
-      this.dosmthn();
+      //this.dosmthn();
   
   
   
