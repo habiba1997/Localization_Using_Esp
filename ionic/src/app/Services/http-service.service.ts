@@ -20,11 +20,11 @@ export class HttpService {
   };
 
 
-  getData()
-{
-  const Url = "http://localhost:3000/company-users-names";
-  return this.http.get<any>(Url,this.httpOptions);
-}
+//   getData()
+// {
+//   const Url = "http://localhost:3000/company-users-names";
+//   return this.http.get<any>(Url,this.httpOptions);
+// }
 
   getRoom(): Observable<any>
   {

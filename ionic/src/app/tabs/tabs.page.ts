@@ -10,7 +10,7 @@ import { interval } from 'rxjs';
   styleUrls: ['tabs.page.scss']
 })
 export class TabsPage implements OnInit{
-  
+  room:number;
   constructor(
     private http:HttpService
   ) { 
@@ -22,7 +22,11 @@ export class TabsPage implements OnInit{
   ngOnInit() {
     interval(2000).subscribe(x => {
       console.log('hey');
-      this.dosmthn();
+      // this.dosmthn();
+      this.http.getRoom().subscribe(data=>{
+        this.room=data.o;
+        console.log("data",data.o);
+      })
   
   
   
@@ -32,15 +36,15 @@ export class TabsPage implements OnInit{
   
     }
   
-  dosmthn()
-  {
-    this.http.getData().subscribe(
-      data => {
-        console.log(data);
-      });
+  // dosmthn()
+  // {
+  //   this.http.getData().subscribe(
+  //     data => {
+  //       console.log(data);
+  //     });
   
   
-    }
+  //   }
     
     
   MovePoint(event){
@@ -54,11 +58,8 @@ export class TabsPage implements OnInit{
     document.querySelector('circle').setAttribute("cx",SCx);
     document.querySelector('circle').setAttribute("cy",SCy);
     console.log("X",event.clientX,"Y",event.clientY);
-    console.log("clientx",event.clientX,"clienty",event.clientY);
     console.log("cX",Cx.toString(),"cY",Cy.toString());
-    console.log("cx",Cx);
 
-    
     
   }
 
