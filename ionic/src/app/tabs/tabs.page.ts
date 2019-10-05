@@ -14,7 +14,6 @@ export class TabsPage implements OnInit{
   constructor(
     private http:HttpService
   ) { 
-    console.log("constructor Tabs")
     
   }
    
@@ -27,6 +26,7 @@ export class TabsPage implements OnInit{
         this.room=data.o;
         console.log("data",data.o);
       })
+      //this.dosmthn();
   
   
   

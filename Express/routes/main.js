@@ -7,7 +7,7 @@ router.get('/:n1/:n2/:n3', function (req, res) {
   current = 10
  // res.json({o:9}).status(200);
  current = predict(req.params.n1,req.params.n2,req.params.n3)
- res.redirect('/getRoom0')
+ res.redirect('/getRoom')
 })
 
 router.get('/getRoom',(req,res)=>{
