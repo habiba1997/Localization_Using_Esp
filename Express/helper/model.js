@@ -1,49 +1,32 @@
-const brain = require('brain.js');
-let net = new brain.NeuralNetwork();
-const dataSet = require('../data.json');
-
+const KNN = require('ml-knn');
+const dataSet = require('../train');
+const label = require('../label')
+var knn;
 
 
 module.exports = {
     train : function(){
-        let dataArray = [];
-
-
-
-    for (let i = 1;i<dataSet.length;i++){
-        dataArray.push({
-            input:{
-                d1:dataSet[i].STUDBME2,
-                d2:dataSet[i].CMP_LAB1,
-                d3:dataSet[i].RehabLab
-            },
-            output:{
-                o:dataSet[i].O
-            }
-        })
-    }
-
-    net.train(dataArray,{log:true});
+        knn = new KNN(dataSet, label);
     },
 
 
     predict : function(d1,d2,d3){
-            
-    let testArray = [];
 
-        testArray.push({
-            d1:parseInt(d1),
-            d2:parseInt(d2),
-            d3:parseInt(d3)
-        });
+        let testArray = [];
 
-        let result = net.run(testArray);
+        testArray.push([
+            parseInt(d1),
+            parseInt(d2),
+            parseInt(d3)
+        ]);
+
+        var result = knn.predict(testArray);
 
 
-    // res.json(result).status(200);
-    // res.json({o:9}).status(200);
-    
-    console.log(`result = ${result.O}`)
-    return result.o;
+        // res.json(result).status(200);
+        // res.json({o:9}).status(200);
+
+        console.log(`result = ${result}`);
+        return result;
     }
 }
