@@ -25,7 +25,14 @@ export class TabsPage implements OnInit{
       this.http.getRoom().subscribe(data=>{
         this.room=data.o;
         console.log("data",data.o);
-      })
+        if(this.room==5){
+          console.log("go to room 2");
+          document.querySelector('circle').setAttribute("cx","253");
+          document.querySelector('circle').setAttribute("cy","82");
+          //console.log("hi");
+
+        }
+      });
       //this.dosmthn();
   
   
