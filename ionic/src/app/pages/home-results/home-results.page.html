@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button color="light"></ion-menu-button>
+      <ion-button large  shape="round">
+        <img src="assets/icon/logo.png" style="width: 60px; height: 40px">
+      </ion-button>
+    </ion-buttons>
+    <ion-title slot ="start">
+        <ion-text>
+          <ion-text color="light" class="fw1000">Gaurdian</ion-text>
+        </ion-text>
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button size="small" shape="round" color="light" (click)="notifications()">
+        <ion-icon name="notifications"></ion-icon>
+        <ion-badge color="danger" slot="end" >1</ion-badge>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar color="light">
+    <ion-searchbar [(ngModel)]="searchKey"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg" >
+<ion-grid>
+  <ion-row>
+    <ion-col>
+      <ion-card no-padding>
+        <ion-card-content no-padding>
+          <ion-card-header>
+            <ion-card-title text-center color = "primary" style="font-weight: bold">Currently Tracking</ion-card-title>
+          </ion-card-header>
+          <ion-list>
+            <ion-item >
+              <ion-label>
+                <ion-text color="dark">Grandma Nadine</ion-text>
+              </ion-label>
+              <ion-button shape= "round" fill = "clear" (click) = "profile()" >
+                <ion-icon slot="icon-only" name="person"></ion-icon>
+              </ion-button> 
+              <ion-button shape="round" fill="clear" size="small" color="primary" (click)="alertLocation()">
+                <ion-icon slot = "icon-only" name="locate"></ion-icon>
+              </ion-button>
+            </ion-item>
+            <!-- <ion-item>
+              <ion-label>
+                <ion-text color="dark">Grandpa John</ion-text>
+              </ion-label>
+              <ion-button shape= "round" size="small" fill = "clear" (click) = "trackeeProf" >
+                <ion-icon slot="icon-only" name="person"></ion-icon>
+              </ion-button>
+              <ion-button shape="round" fill="clear" size="small" color="primary" (click)="alertLocation()">
+                <ion-icon slot="icon-only" name="locate"></ion-icon>
+              </ion-button>
+            </ion-item> -->
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+  <!-- <ion-row>
+    <ion-col width-50 style = "text-align:right">
+      <ion-button margin shape= "round" (click) = "addPerson" >
+        <ion-icon slot="start" name="add"></ion-icon>
+        <div hidden-xs visible-block-md>Add a person to track </div>
+      </ion-button>
+    </ion-col>
+    <ion-col width-50 style = "text-align:left">
+      <ion-button color = "danger" margin shape= "round" (click) = "removePerson" >
+        <ion-icon slot="start" name="trash"></ion-icon>
+        <div hidden-xs visible-block-md>Remove tracked person</div>
+      </ion-button>
+    </ion-col>
+  </ion-row> -->
+</ion-grid>
+</ion-content>
+  

@@ -1,0 +1,15 @@
+:host {
+    ion-content {
+        --background: var(--ion-color-light);
+    }
+
+    ion-item {
+        border-radius: 0;
+        border-bottom: 1px dotted var(--ion-color-medium);
+    }
+}
+
+.bg{
+    background-image: url(/src/assets/img/bg.jpg)  no-repeat 100% 100%;
+    
+}

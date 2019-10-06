@@ -1,5 +1,8 @@
 {
-  "name": "new-ionic3-angular4",
-  "integrations": {},
-  "type": "angular"
+  "name": "ionic4Start",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular",
+  "id": "3fff720e"
 }

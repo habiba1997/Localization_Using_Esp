@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar >
+    <ion-menu-button color="light" ></ion-menu-button>
+    <ion-title style="font-weight: bold">Map</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <div  text-center padding >
+      
+          <svg id="svg" (mousedown)="MovePoint($event)">
+              <g >
+                <circle class="svg-circle"  cx="50" cy="50" r="10">
+
+                  
+                </circle>
+              </g>
+            </svg>
+      
+    
+  </div>
+</ion-content>
+  
+
+
