@@ -18,19 +18,25 @@ export class MapComponent implements OnInit {
    
   
   ngOnInit() {
-    interval(2000).subscribe(x => {
+    // interval(2000).subscribe(x => {
       console.log('hey');
       this.http.getRoom().subscribe(data=>{
         this.room=data.o;
         console.log("data",data.o);
         if(this.room==5){
           console.log("go to room 2");
-          document.querySelector('circle').setAttribute("cx","253");
-          document.querySelector('circle').setAttribute("cy","82");
+          document.querySelector('circle').setAttribute("cx","500");
+          document.querySelector('circle').setAttribute("cy","320");
+          setTimeout(function(){
+                          document.querySelector('circle').setAttribute("cx","390");
+              document.querySelector('circle').setAttribute("cy","250");
+            
+          },5000);
+          
           //console.log("hi");
 
         }
-      });
+      // });
       
   
   
@@ -38,9 +44,38 @@ export class MapComponent implements OnInit {
     });
     
   
-  
     }
   
+
+      
+  // ngOnInit() {
+  //   // interval(2000).subscribe(x => {
+  //     console.log('hey');
+  //     this.http.getRoom().subscribe(data=>{
+  //       this.room=data.o;
+  //       console.log("data",data.o);
+  //       if(this.room==5){
+  //         console.log("go to room 2");
+  //         document.querySelector('circle').setAttribute("cx","370");
+  //         document.querySelector('circle').setAttribute("cy","250");
+  //         setTimeout(function(){
+  //                         document.querySelector('circle').setAttribute("cx","370");
+  //             document.querySelector('circle').setAttribute("cy","250");
+            
+  //         },5000);
+          
+  //         //console.log("hi");
+
+  //       }
+  //     // });
+      
+  
+  
+  
+  //   });
+    
+  
+  //   }
   // dosmthn()
   // {
   //   this.http.getData().subscribe(
